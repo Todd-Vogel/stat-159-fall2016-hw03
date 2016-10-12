@@ -8,8 +8,6 @@ Sales <- advertising.data$Sales
 Newspaper <- advertising.data$Newspaper
 Radio <- advertising.data$Radio
 
-model.res <- resid(regression1)
-
 
 png('../../images/residual-plot.png')
 plot(regression1, which = c(1), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))

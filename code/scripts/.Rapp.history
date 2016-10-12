@@ -313,7 +313,6 @@ abline(0,0)#
 dev.off()
 ?plot.lm
 plot(regression1, caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location")
-plot(regression1, caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location")
 plot(regression1, caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location"))
 plot(regression1, which = c(1:3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))
 advertising.data <- read.csv("../../data/Advertising.csv")#
@@ -323,7 +322,6 @@ analysis.plots <- plot(regression1, which = c(1:3), caption = list("Residuals vs
 analysis.plots[[2]]
 analysis.plots[[3]]
 analysis.plots[[1]]]
-analysis.plots[[1]]
 analysis.plots[[1]]
 analysis.plots <- plot(regression1, which = c(1:3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))
 analysis.plots[[2]]
@@ -339,4 +337,152 @@ dev.off()#
 #
 png('../../images/scale-location-plot.png')#
 plot(regression1, which = c(3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()
+advertising.data <- read.csv('../../data/Advertising.csv')
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+dependent.matrix <- advertising.data[,c(2,3,4)]#
+cor.matrix <- cor(dependent.matrix)#
+#
+sink("../../data/eda-output.txt")#
+Sales_stats <- summary(Sales)#
+TV_stats <- summary(TV)#
+Radio_stats <- summary(Radio)#
+Newspaper_stats <- summary(Newspaper)#
+full_statistics <- rbind(Sales_stats, TV_stats, Radio_stats, Newspaper_stats)#
+full_statistics#
+cor.matrix#
+sink()#
+#
+save(cor.matrix, file = "../../data/correlation-matrix.RData")#
+#
+png('../../images/scatterplot-matrix.png')#
+pairs(advertising.data[,c(2,3,4)])#
+dev.off()#
+#
+png('../../images/histogram-sales.png')#
+hist(Sales)#
+dev.off()#
+#
+png('../../images/histogram-tv.png')#
+hist(TV)#
+dev.off()#
+#
+png('../../images/histogram-radio.png')#
+hist(Radio)#
+dev.off()#
+#
+png('../../images/histogram-newspaper.png')#
+hist(Newspaper)#
+dev.off()
+advertising.data <- read.csv("data/Advertising.csv")#
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)#
+reg1 <- summary(regression1)#
+TV <- advertising.data$TV#
+Sales <- advertising.data$Sales#
+Newspaper <- advertising.data$Newspaper#
+Radio <- advertising.data$Radio#
+#
+model.res <- resid(regression1)#
+png('images/residual-plot.png')#
+plot(regression1, which = c(1), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+#
+png('images/normal-qq-plot.png')#
+plot(regression1, which = c(2), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+#
+png('images/scale-location-plot.png')#
+plot(regression1, which = c(3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+save(reg1, file = "data/regression.RData")#
+#
+png('images/scatterplot-tv-sales.png')#
+plot(TV, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()#
+#
+png('images/scatterplot-newspaper-sales.png')#
+plot(Newspaper, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()#
+#
+png('images/scatterplot-radio-sales.png')#
+plot(Radio, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()
+advertising.data <- read.csv("../../data/Advertising.csv")#
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)#
+reg1 <- summary(regression1)#
+TV <- advertising.data$TV#
+Sales <- advertising.data$Sales#
+Newspaper <- advertising.data$Newspaper#
+Radio <- advertising.data$Radio#
+#
+model.res <- resid(regression1)#
+png('images/residual-plot.png')#
+plot(regression1, which = c(1), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+#
+png('images/normal-qq-plot.png')#
+plot(regression1, which = c(2), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+#
+png('images/scale-location-plot.png')#
+plot(regression1, which = c(3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+save(reg1, file = "data/regression.RData")#
+#
+png('images/scatterplot-tv-sales.png')#
+plot(TV, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()#
+#
+png('images/scatterplot-newspaper-sales.png')#
+plot(Newspaper, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()#
+#
+png('images/scatterplot-radio-sales.png')#
+plot(Radio, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()
+advertising.data <- read.csv("../../data/Advertising.csv")#
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)#
+reg1 <- summary(regression1)#
+TV <- advertising.data$TV#
+Sales <- advertising.data$Sales#
+Newspaper <- advertising.data$Newspaper#
+Radio <- advertising.data$Radio#
+#
+model.res <- resid(regression1)#
+png('../../images/residual-plot.png')#
+plot(regression1, which = c(1), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+#
+png('../../images/normal-qq-plot.png')#
+plot(regression1, which = c(2), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+#
+png('../../images/scale-location-plot.png')#
+plot(regression1, which = c(3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+save(reg1, file = "../../data/regression.RData")#
+#
+png('../../images/scatterplot-tv-sales.png')#
+plot(TV, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()#
+#
+png('../../images/scatterplot-newspaper-sales.png')#
+plot(Newspaper, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()#
+#
+png('../../images/scatterplot-radio-sales.png')#
+plot(Radio, Sales)#
+abline(regression1, col = "#0000DD59")#
 dev.off()

@@ -1,5 +1,4 @@
 advertising.data <- read.csv('../../data/Advertising.csv')
-library('xtable')
 
 Sales <- advertising.data$Sales
 TV <- advertising.data$TV

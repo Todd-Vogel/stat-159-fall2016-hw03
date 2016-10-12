@@ -5,3 +5,14 @@ sink("../../session-info.txt")#
 sessionInfo('testthat')#
 sessionInfo('xtable')#
 sink()
+mtcars
+lm(mtcars~hp+disp)
+lm(mpg~hp+disp, data = mtcars)
+summary(lm(mpg~hp+disp, data = mtcars))
+reg <- lm(mpg ~ disp + hp, data = mtcars)
+sum(reg$residuals^2)
+sum((mtcars$mpg-mean(mtcars$mpg))^2)
+regsum <- summary(reg)
+regsum$sigma
+regsum$r.squared
+regsum$fstatistic[1]
