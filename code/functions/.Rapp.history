@@ -1,0 +1,199 @@
+regression1
+advertising.data <- read.csv("../../data/Advertising.csv")#
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)#
+reg1 <- summary(regression1)#
+#
+regression1
+advertising.data <- read.csv("../../data/Advertising.csv")
+residual_sum_squares <- function(lm) {
+residual_sum_squares <- function(lm) {
+residual_sum_squares <- function(lm) {#
+	x <- 0#
+	for (i in 1:nrow(advertising.data)) {#
+		x[i] <- x[i - 1] + (advertising.data$Sales[i]-predict(lm, advertising.data)[i])^2#
+	}	#
+}
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)
+residual_sum_squares(lm = regression1)
+residual_sum_squares <- function(lm) {#
+	x <- 0#
+	for (i in 1:nrow(advertising.data)) {#
+		x <- x + (advertising.data$Sales[i]-predict(lm, advertising.data)[i])^2#
+	}	#
+}
+residual_sum_squares(lm = regression1)
+residual_sum_squares <- function(lm) {#
+	x <- 0#
+	for (i in 1:nrow(advertising.data)) {#
+		x <- x + (advertising.data$Sales[i]-predict(lm, advertising.data)[i])^2#
+	}	#
+ return(x)#
+}
+egression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)#
+residual_sum_squares(lm = regression1)
+summary(regression1)
+print(sum(regression1$residuals^2))
+residual_sum_squares <- function(lm) {#
+	print(sum(lm$residuals^2))#
+}
+residual_sum_squares(lm = regression1)
+advertising.data <- read.csv("../../data/Advertising.csv")
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)
+summary(regression1)
+colnames(regression1)
+regression1$R-squared
+regression1$'Multiple R-squared'
+regression1$fitted.values
+mean(regression1)
+nrow(regression1)
+nrow(regression1$residual)
+nrow(regression1$residuals)
+advertising.data <- read.csv("../../data/Advertising.csv")#
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)#
+summary(regression1)
+regression1$fitted.values
+nrow(regression1$residuals)
+length (regression1$residuals)
+total_sum_squares <- function(lm) {#
+ y <- numeric()#
+	for (i in 1:length(lm$residuals)) {#
+		y[i] <- lm$residuals[i]+lm$fitted.values[i]#
+	}#
+	y_bar <- sum(y)/length(y)#
+		x <- 0#
+		for (i in 1:length(y)) {#
+			x[i] <- (y[i]-y_bar)^2#
+			print(sum(x))#
+		}#
+}
+totat_sum_squares(regression1)
+total_sum_squares(regression1)
+total_sum_squares <- function(lm) {#
+ y <- numeric()#
+	for (i in 1:length(lm$residuals)) {#
+		y[i] <- lm$residuals[i]+lm$fitted.values[i]#
+	}#
+	y_bar <- sum(y)/length(y)#
+		x <- 0#
+		for (i in 1:length(y)) {#
+			x[i] <- (y[i]-y_bar)^2#
+		}#
+print(sum(x))#
+}#
+#
+total_sum_squares(regression1)
+RSS <- residual_sum_squares(lm = regression1)
+TSS <- total_sum_squares(regression1)
+(TSS-RSS)/TSS
+r_squared <- function(lm) {
+r_squared <- function(lm) {
+r_squared <- function(lm) {#
+	(total_sum_squares - residual_sum_squares)/total_sum_squares#
+}
+r_squared(regression1)
+r_squared <- function(lm) {#
+	(total_sum_squares(lm) - residual_sum_squares(lm))/total_sum_squares(lm)#
+}#
+#
+r_squared(regression1)
+total_sum_squares(regression1)
+residual_sum_squares(lm = regression1)
+residual_sum_squares <- function(lm) {#
+	sum(lm$residuals^2)#
+}
+residual_sum_squares(lm = regression1)
+y <- numeric()#
+	for (i in 1:length(lm$residuals)) {#
+		y[i] <- lm$residuals[i]+lm$fitted.values[i]#
+	}#
+	y_bar <- sum(y)/length(y)#
+		x <- 0#
+		for (i in 1:length(y)) {#
+			x[i] <- (y[i]-y_bar)^2#
+		}#
+		sum(x)#
+}
+total_sum_squares <- function(lm) {#
+ y <- numeric()#
+	for (i in 1:length(lm$residuals)) {#
+		y[i] <- lm$residuals[i]+lm$fitted.values[i]#
+	}#
+	y_bar <- sum(y)/length(y)#
+		x <- 0#
+		for (i in 1:length(y)) {#
+			x[i] <- (y[i]-y_bar)^2#
+		}#
+sum(x)#
+}
+total_sum_squares(regression1)
+r_squared <- function(lm) {#
+	(total_sum_squares(lm) - residual_sum_squares(lm))/total_sum_squares(lm)#
+}
+r_squared(regression1)
+length(regression1$coefficients)
+nrow(regression1$coefficients)
+regression1$df
+length(regression1$estimate)
+length(regression1$coefficients)
+f_statistic() <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))/length(lm$coefficients)-1)/(residual_sum_squares(lm)/(length(lm$residuals)-(length(lm$coefficients)-1)-1)#
+}
+f_statistic(regression1)
+f_statistic() <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))/length(lm$coefficients)-1)/(residual_sum_squares(lm)/(length(lm$residuals)-(length(lm$coefficients)-1)-1))#
+}#
+#
+f_statistic(regression1)
+f_statistic() <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))/length(lm$coefficients)-1)/(residual_sum_squares(lm)/(length(lm$residuals)-length(lm$coefficients)-2))#
+}
+f_statistic() <- function(lm) {#
+	(total_sum_squares(lm) - residual_sum_squares(lm))/length(lm$coefficients)-1#
+}
+f_statistic <- function(lm) {#
+	(total_sum_squares(lm) - residual_sum_squares(lm))/length(lm$coefficients)-1/(residual_sum_squares(lm)/(length(lm$residuals)-length(lm$coefficients)-2))#
+}
+f_statistic(regression1)
+length(regression1$residuals)
+f_statistic <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))/length(lm$coefficients)-1)/(residual_sum_squares(lm)/(length(lm$residuals)-length(lm$coefficients)-2))#
+}
+f_statistic(regression1)
+f_statistic <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))/length(lm$coefficients)-1)/(residual_sum_squares(lm)/(length(lm$residuals)-length(lm$coefficients)-1))#
+}
+f_statistic(regression1)
+total_sum_squares(regression1)
+residual_sum_squares(regression1)
+f_statistic <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))/length(lm$coefficients)-1)#
+}
+f_statistic(regression1)
+f_statistic <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))#
+}
+f_statistic <- function(lm) {#
+	(total_sum_squares(lm) - residual_sum_squares(lm))#
+}
+f_statistic(regression1)
+length(regression1$coefficients)-1
+f_statistic <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))/(length(lm$coefficients)-1))#
+}
+f_statistic(regression1)
+f_statistic <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))/(length(lm$coefficients)-1))/(residual_sum_squares(lm)/(length(lm$residuals)-length(lm$coefficients)-2))#
+}
+f_statistic(regression1)
+f_statistic <- function(lm) {#
+	((total_sum_squares(lm) - residual_sum_squares(lm))/(length(lm$coefficients)-1))/(residual_sum_squares(lm)/(length(lm$residuals)-(length(lm$coefficients)-1)-1))#
+}
+f_statistic(regression1)
+sqrt(4)
+residual_std_error <- function(lm) {#
+	sqrt((1/((length(lm$residuals)-(length(lm$coefficients)-1)-1))*residual_sum_squares(lm))#
+}
+residual_std_error <- function(lm) {#
+	sqrt((1/((length(lm$residuals)-(length(lm$coefficients)-1)-1))*residual_sum_squares(lm)))#
+}
+residual_std_error(regression1)

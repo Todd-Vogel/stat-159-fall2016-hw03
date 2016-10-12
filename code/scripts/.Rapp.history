@@ -1,0 +1,342 @@
+advertising.data <- read.csv('../../data/Advertising.csv')
+png('../../images/histogram-sales.png')
+hist(advertising.data$Sales)
+dev.off()
+pdf('../../images/histogram-sales.pdf')
+hist(advertising.data$Sales)
+dev.off()
+png('../../images/histogram-tv.png')
+hist(advertising.data$TV)
+dev.off()
+pdf('../../images/histogram-tv.pdf')
+hist(advertising.data$TV)
+dev.off()
+advertising.data <- read.csv('../../data/Advertising.csv')#
+#
+png('../../images/histogram-sales.png')#
+hist(advertising.data$Sales)#
+dev.off()#
+#
+png('../../images/histogram-tv.png')#
+hist(advertising.data$TV)#
+dev.off()#
+#
+png('../../images/histogram-radio.png')#
+hist(advertising.data$Radio)#
+dev.off()#
+#
+png('../../images/histogram-newspaper.png')#
+hist(advertising.data$Newspaper)#
+dev.off()
+advertising.data <- read.csv('../../data/Advertising.csv')#
+#
+png('../../images/histogram-sales.png')#
+Sales <- advertising.data$Sales#
+hist(advertising.data$Sales)#
+dev.off()#
+#
+png('../../images/histogram-tv.png')#
+TV <- advertising.data$TV#
+hist(advertising.data$TV)#
+dev.off()#
+#
+png('../../images/histogram-radio.png')#
+Radio <- advertising.data$Radio#
+hist(advertising.data$Radio)#
+dev.off()#
+#
+png('../../images/histogram-newspaper.png')#
+Newspaper <- advertising.data$Newspaper#
+hist(advertising.data$Newspaper)#
+dev.off()
+advertising.data <- read.csv('../../data/Advertising.csv')#
+#
+png('../../images/histogram-sales.png')#
+Sales <- advertising.data$Sales#
+hist(Sales)#
+dev.off()#
+#
+png('../../images/histogram-tv.png')#
+TV <- advertising.data$TV#
+hist(TV)#
+dev.off()#
+#
+png('../../images/histogram-radio.png')#
+Radio <- advertising.data$Radio#
+hist(Radio)#
+dev.off()#
+#
+png('../../images/histogram-newspaper.png')#
+Newspaper <- advertising.data$Newspaper#
+hist(Newspaper)#
+dev.off()
+Sales <- advertising.data$Sales
+advertising.data <- read.csv('../../data/Advertising.csv')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+S <- summary(Sales)#
+xtable(S)
+install.packages('xtable')
+library('xtable')
+xtable(S)
+S <- summary(Sales)
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+S <- summary(Sales)#
+xtable(S)
+advertising.data <- read.csv('../../data/Advertising.csv')#
+library('xtable')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+S <- summary(Sales)#
+xtable(S)
+advertising.data <- read.csv('../../data/Advertising.csv')#
+library('xtable')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+S <- summary(Sales)#
+S
+advertising.data <- read.csv('../../data/Advertising.csv')#
+library('xtable')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+S <- summary(Sales)#
+T <- summary(TV)#
+R <- summary(Radio)#
+N <- summary(Newspaper)#
+#
+full_statistics <- rbind(c(S,T,R,N))
+full_statistics
+advertising.data <- read.csv('../../data/Advertising.csv')#
+library('xtable')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+S <- summary(Sales)#
+T <- summary(TV)#
+R <- summary(Radio)#
+N <- summary(Newspaper)#
+#
+full_statistics <- rbind(S,T,R,N)#
+full_statistics
+advertising.data <- read.csv('../../data/Advertising.csv')#
+library('xtable')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+sink("../../data/eda-output.txt")#
+Sales_stats <- summary(Sales)#
+TV_stats <- summary(TV)#
+Radio_stats <- summary(Radio)#
+Newspaper_stats <- summary(Newspaper)#
+full_statistics <- rbind(S,T,R,N)#
+sink()
+Sales_stats <- summary(Sales)#
+TV_stats <- summary(TV)#
+Radio_stats <- summary(Radio)#
+Newspaper_stats <- summary(Newspaper)#
+full_statistics <- rbind(Sales_stats, TV_stats, Radio_stats, Newspaper_stats)#
+full_statistics
+advertising.data <- read.csv('../../data/Advertising.csv')#
+library('xtable')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+sink("../../data/eda-output.txt")#
+Sales_stats <- summary(Sales)#
+TV_stats <- summary(TV)#
+Radio_stats <- summary(Radio)#
+Newspaper_stats <- summary(Newspaper)#
+full_statistics <- rbind(Sales_stats, TV_stats, Radio_stats, Newspaper_stats)#
+full_statistics#
+sink()
+advertising.data <- read.csv("../../data/Advertising.csv")#
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)#
+reg1 <- summary(regression1)#
+#
+TV <- advertising.data$TV#
+Sales <- advertising.data$Sales#
+Newspaper <- advertising.data$Newspaper#
+Radio <- advertising.data$Radio#
+#
+save(reg1, file = "../../data/regression.RData")#
+#
+png('../../images/scatterplot-tv-sales.png')#
+plot(TV, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()#
+#
+png('../../images/scatterplot-newspaper-sales.png')#
+plot(Newspaper, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()#
+#
+png('../../images/scatterplot-radio-sales.png')#
+plot(Radio, Sales)#
+abline(regression1, col = "#0000DD59")#
+dev.off()
+load("/Users/toddvogel/Documents/Senior Year/stat159-fall2016-hw03/data/regression.RData")
+colnames(advertising.data)
+advertising.data <- read.csv('../../data/Advertising.csv')
+colnames(advertising.data)
+dependent.matrix <- advertising.data[,c(2,3,4)]
+cor(dependent.matrix)
+advertising.data <- read.csv('../../data/Advertising.csv')#
+library('xtable')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+dependent.matrix <- advertising.data[,c(2,3,4)]#
+cor.matrix <- cor(dependent.matrix)#
+#
+sink("../../data/eda-output.txt")#
+Sales_stats <- summary(Sales)#
+TV_stats <- summary(TV)#
+Radio_stats <- summary(Radio)#
+Newspaper_stats <- summary(Newspaper)#
+full_statistics <- rbind(Sales_stats, TV_stats, Radio_stats, Newspaper_stats)#
+full_statistics#
+cor.matrix#
+sink()#
+#
+save(cor.matrix, file = "../../data/regression.RData")
+load("/Users/toddvogel/Documents/Senior Year/stat159-fall2016-hw03/data/regression.RData")
+advertising.data <- read.csv('../../data/Advertising.csv')#
+library('xtable')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+dependent.matrix <- advertising.data[,c(2,3,4)]#
+cor.matrix <- cor(dependent.matrix)#
+#
+sink("../../data/eda-output.txt")#
+Sales_stats <- summary(Sales)#
+TV_stats <- summary(TV)#
+Radio_stats <- summary(Radio)#
+Newspaper_stats <- summary(Newspaper)#
+full_statistics <- rbind(Sales_stats, TV_stats, Radio_stats, Newspaper_stats)#
+full_statistics#
+cor.matrix#
+sink()#
+#
+save(cor.matrix, file = "../../data/correlation-matrix.RData")
+load("/Users/toddvogel/Documents/Senior Year/stat159-fall2016-hw03/data/correlation-matrix.RData")
+advertising.data <- read.csv("../../data/Advertising.csv")#
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)#
+reg1 <- summary(regression1)#
+#
+TV <- advertising.data$TV#
+Sales <- advertising.data$Sales#
+Newspaper <- advertising.data$Newspaper#
+Radio <- advertising.data$Radio#
+#
+save(reg1, file = "../../data/regression.RData")
+load("/Users/toddvogel/Documents/Senior Year/stat159-fall2016-hw03/data/regression.RData")
+pairs(advertising.data[,c(2,3,4)])
+advertising.data <- read.csv('../../data/Advertising.csv')#
+library('xtable')#
+#
+Sales <- advertising.data$Sales#
+TV <- advertising.data$TV#
+Radio <- advertising.data$Radio#
+Newspaper <- advertising.data$Newspaper#
+#
+dependent.matrix <- advertising.data[,c(2,3,4)]#
+cor.matrix <- cor(dependent.matrix)#
+#
+pairs(advertising.data[,c(2,3,4)])
+png('../../images/scatterplot-matrix.png')#
+pairs(advertising.data[,c(2,3,4)])#
+dev.off()
+resid(regression1)
+advertising.data <- read.csv("../../data/Advertising.csv")#
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)#
+reg1 <- summary(regression1)#
+#
+TV <- advertising.data$TV#
+Sales <- advertising.data$Sales#
+Newspaper <- advertising.data$Newspaper#
+Radio <- advertising.data$Radio
+resid(regression1)
+model.res <- resid(regression1)
+plot(adverstising.data[2,3,4], model.res)
+plot(advertising.data[2,3,4], model.res)
+plot(advertising.data$TV, model.res, xlab = 'TV')
+abline(0,0)
+plot(advertising.data$Radio, model.res, xlab = 'Radio')
+abline(0,0)
+plot(advertising.data$Newspaper, model.res, xlab = 'Newspaper')
+abline(0,0)
+plot(advertising.data[,2:4], model.res, xlab = 'TV')
+plot(advertising.data[,2:4], model.res, xlab = 'variables')
+plot(advertising.data[,2:4], model.res, xlab = 'things')
+plot(advertising.data[,2:4], model.res)
+abline(0,0)
+plot(fitted(regression1), model.res)
+plot(fitted(regression1), model.res, xlab = 'Predicted scores', ylab = 'Residuals')#
+abline(0,0)
+png('../../images/residual-plot.png')#
+plot(fitted(regression1), model.res, xlab = 'Predicted scores', ylab = 'Residuals')#
+abline(0,0)#
+dev.off()
+?plot.lm
+plot(regression1, caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location")
+plot(regression1, caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location")
+plot(regression1, caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location"))
+plot(regression1, which = c(1:3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))
+advertising.data <- read.csv("../../data/Advertising.csv")#
+regression1 <- lm(Sales ~ TV + Newspaper + Radio, advertising.data)
+plot(regression1, which = c(1:3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))
+analysis.plots <- plot(regression1, which = c(1:3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))
+analysis.plots[[2]]
+analysis.plots[[3]]
+analysis.plots[[1]]]
+analysis.plots[[1]]
+analysis.plots[[1]]
+analysis.plots <- plot(regression1, which = c(1:3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))
+analysis.plots[[2]]
+analysis.plots <- plot(regression1, which = c(1:3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))
+analysis.plots
+png('../../images/residual-plot.png')#
+plot(regression1, which = c(1), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+#
+png('../../images/normal-qq-plot.png')#
+plot(regression1, which = c(2), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()#
+#
+png('../../images/scale-location-plot.png')#
+plot(regression1, which = c(3), caption = list("Residuals vs Fitted", "Normal Q-Q", "Scale-Location", "Cook's distance", "Residuals vs Leverage", expression("Cook's dist vs Leverage  " * h[ii] / (1 - h[ii]))))#
+dev.off()

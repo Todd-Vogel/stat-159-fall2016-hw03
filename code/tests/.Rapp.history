@@ -1,0 +1,7 @@
+?sessionInfo
+sessionInfo('testthat')
+sessionInfo('testthat')#
+sink("../../session-info.txt")#
+sessionInfo('testthat')#
+sessionInfo('xtable')#
+sink()

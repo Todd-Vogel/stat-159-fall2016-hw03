@@ -1,0 +1,2 @@
+load("/Users/toddvogel/Documents/Senior Year/stat159-fall2016-hw03/data/regression.RData")
+load("/Users/toddvogel/Documents/Senior Year/stat159-fall2016-hw03/data/correlation-matrix.RData")
