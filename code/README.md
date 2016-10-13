@@ -10,6 +10,10 @@ This file contains an R script that calculates relevant information on TV, Radio
 
 This file calculates the regression coefficients for the relationship between the dependent variable sales and the independent variables TV, Radio, and Newspaper.  Along with that, the file creates .png and .pdf scatterplot of the results as well as residual, scale location, and normal qq plots.
 
+###session-info-script.R
+
+This file includes information on each R package utilized in this homework.
+
 ##Functions
 
 ###regression-functions.R
