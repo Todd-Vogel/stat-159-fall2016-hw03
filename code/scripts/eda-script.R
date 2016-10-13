@@ -6,7 +6,7 @@ Radio <- advertising.data$Radio
 Newspaper <- advertising.data$Newspaper
 
 dependent.matrix <- advertising.data[,c(2,3,4)]
-cor.matrix <- cor(dependent.matrix)
+cor.matrix <- as.matrix(cor(dependent.matrix))
 
 sink("../../data/eda-output.txt")
 Sales_stats <- summary(Sales)
