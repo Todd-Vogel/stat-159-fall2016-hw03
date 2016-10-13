@@ -1,0 +1,23 @@
+---
+title: 'HW 3: Multiple Regression Analysis'
+author: "Todd Vogel"
+date: "10/14/2016"
+output: pdf_document
+---
+
+#Abstract
+
+The following reports looks into data on advertising costs across multiple media including television, radio, and newspaper as well as sales.  By utilizing linear modelling we effectively establish the relationship between advertising and sales numbers, specifically focusing on television, newspapers, and radio. We conclude based on regression metrics such as $R^2$, F-Statistic, and Residual Standard Error that the model is not and effective predictor of future sales. The results are a reproduction of the work in Chapter 3.2 in the book **An Introduction to Statistical Learning.**
+
+#Introduction
+
+#Data
+
+The data utilized in the project is exclusively an Advertising data set with 4 variables: `TV`, `Radio`, `Newspaper`, and `Sales`.  `Sales`, our dependent variable is measured in thousands of units and `TV`, `Radio`, and `Newspaper` are our independent variables measured in thousands of dollars. Each data point, or row, represents an individual product (of which there are 200, in as many different markets).
+
+#Methodology
+
+#Results
+
+#Conclusions
+
