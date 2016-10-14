@@ -1,6 +1,6 @@
-Homework 3
+#Homework 3
 
-Todd Vogel
+*Todd Vogel*
 
 This repository contains directories code/, data/, images/, and report/ as well as a makefile, licensing and session information,.
 
