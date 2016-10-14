@@ -1,6 +1,6 @@
 # Run all previous commands to get all of the listed outputs
 
-all: report/report.pdf data/eda-output.txt data/regression.RData data/correlation-matrix.RData
+all: data/eda-output.txt data/regression.RData data/correlation-matrix.RData report/report.pdf
 
 # Create pdf report document from R markdown file
 
