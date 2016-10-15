@@ -1,11 +1,16 @@
 # Run all previous commands to get all of the listed outputs
 
-all: data/eda-output.txt data/regression.RData data/correlation-matrix.RData report/report.pdf
+all: test data/eda-output.txt data/regression.RData data/correlation-matrix.RData report/report.pdf
 
 # Create pdf report document from R markdown file
 
 report/report.pdf: report/report.Rmd 
 	cd report; Rscript -e 'library(rmarkdown); render("report.Rmd")'
+
+# Testing the accuracy of functions
+
+test: code/tests/test-regression.R
+	cd code/tests; Rscript -e 'library(testthat); test_file("test-regression.R")'
 
 # Run eda-script which incorporates the Advertising dataset to output txt document
 
